@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Login</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+	<link href="style/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="style/fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel='stylesheet' type='text/css' href='style/style.css' />
+	<link rel='stylesheet' type='text/css' href='style/normalize.css' />
+	<script type='text/javascript'  language='javascript' src='js/jquery.js'></script>
+	<script type='text/javascript'  language='javascript' src='js/script.js'></script>
+	<!--[if IE 6]>
+	<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+</head>
+<body>
+   
+	<div id="wrapper">
+		<div id="header-wrapper">
+			<div id="header" class="container">
+				<div id="logo">
+					<h1><a href="#">Sistema de Condomínio</a></h1>
+					<p>Atividade de java web</p>
+				</div>
+			</div>
+			
+			<!-- faixa verde -->
+			<div id="menu" class="container">
+				<ul>
+					<li class="current_page_item" style='height:65px'>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- conteiner login -->
+		<div id="page" class="container_login">
+			<div style='margin-left:auto; margin-right:auto; height:700px; width:100% '; id="content">		
+				<section class="secao">
+					<div class="title">
+						<h1 style='font-size:30px'>LOGIN</h1>
+					</div>
+					<div class="aba aba-add-tipo">
+						<div class="aba-bg">
+							<div class='aba-conteiner'>
+								
+								<form id='form_login' name="form_login" method="post" action = 'SGCServlet'>						
+									<span class='aba-title'>User Name </span>
+									<input class='inp' name="username" id="inp-username" type='text'/>	
+									<span class='aba-title' >Password </span>
+									<input class='inp' name="password" id="inp-password" type='password'/>
+									<input type="hidden" name="cmd" value="login" />
+									
+									<span style='color:#f00; display:none;' id='msg-erro'> Erro de Login: Verifique a Senha ou nome de usuário.</span>
+									<button name='bt-login'>Login</button>
+								</form>
+							
+							</div>
+						</div>
+					</div>
+				</section> 
+			</div>
+		</div>
+	</div>
+
+	<!-- rodap� -->
+	<div id="portfolio-wrapper">
+		<div id="portfolio" class="container">
+		</div>
+	</div>
+
+	<div id="footer">
+		<p>Copyright (c) 2013 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>.</p>
+	</div>
+
+	</body>
+</html>
