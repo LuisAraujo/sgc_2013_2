@@ -71,7 +71,7 @@
 
 				<div class="secao">
 					<div class="title">
-						<h1 style='font-size: 30px'>Gerenciamento de Tipo de ServiÃ§o</h1>
+						<h1 style='font-size: 30px'>Gerenciamento de Tipo de Serviço</h1>
 					</div>
 					<div class="div-bt-abas">
 						<div id="bt-aba-add" class="bt-aba">
