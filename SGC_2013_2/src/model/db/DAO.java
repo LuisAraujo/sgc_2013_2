@@ -49,6 +49,8 @@ public class DAO {
 	}
 
 	
+	
+	/*
 	// executar atualizações no banco: INSERTs, UPDATEs, DELETEs
 	public void executarSQL(String sql) {
 		try {
@@ -61,6 +63,24 @@ public class DAO {
 			System.out.println("Nao foi possível executar SQL.");
 		}
 	}
+	
+	*/
+	
+
+	public int executarSQL(String sql) {
+		try {
+
+			Statement st = con.createStatement();
+			st.executeUpdate(sql);
+			st.close();
+
+		} catch (Exception e) {
+			System.out.println("Nao foi possível executar SQL.");
+			return 0;
+		}
+		return 1;
+	}
+	
 
 	public  int getRowCount(ResultSet rs) {
 		int rows = 0;
