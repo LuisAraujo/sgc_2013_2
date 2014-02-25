@@ -1,4 +1,4 @@
-#content{
+.content{
 	
 	margin-left:auto; 
 	margin-right:auto; 
@@ -7,6 +7,24 @@
 	
 	
 }
+
+#content_adm{
+	display:block;
+}
+
+#content_desp{
+	display:none;
+}
+
+#content_serv{
+	display:none;
+}
+
+#content_usu{
+	display:none;
+}
+
+
 .aba-add-tipo{
 	display:block;
 }
@@ -18,6 +36,39 @@
 .aba-exc-tipo{
 	display:none;
 }
+
+
+/* despesa*/
+.aba-add-tipo-desp{
+	display:block;
+}
+
+.aba-alt-tipo-desp{
+	display:none;
+}
+
+.aba-exc-tipo-desp{
+	display:none;
+}
+
+/*despesa*/
+
+
+
+/* admistrador*/
+.aba-add-tipo-adm{
+	display:block;
+}
+
+.aba-alt-tipo-adm{
+	display:none;
+}
+
+.aba-exc-tipo-adm{
+	display:none;
+}
+
+/*administrador*/
 
 
 .aba{

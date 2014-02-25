@@ -45,29 +45,181 @@
 			<div id="header" class="container">
 				<div id="logo">
 					<h1>
-						<a href="#">Sistema de CondomÃ­nio</a>
+						<a href="#">Sistema de Condomínio</a>
 					</h1>
 					<p>Atividade de java web</p>
 				</div>
 			</div>
 			<div id="menu" class="container">
 				<ul>
-					<li class="current_page_item"><a href="#" accesskey="1"
-						title="">bt 01</a></li>
-					<li><a href="#" accesskey="1" title="">btv02</a></li>
-					<li><a href="#" accesskey="2" title="">btv03</a></li>
-					<li><a href="#" accesskey="3" title="">btv04</a></li>
-					<li><a href="#" accesskey="4" title="">Tipo de ServiÃ§o</a></li>
-					<li><a href="#" accesskey="5" title="">btv06</a></li>
+					<li id='bt_administrador' class="current_page_item"> <span>Administradores</span> </li>
+					<li id='bt_despesa' > <span> Despesas </span></li>
+					<li id='bt_servico' > <span> Serviços </span> </li>
+					<li id='bt_usuario'>  <span> btv04 </span>  </li>
 				</ul>
 			</div>
 		</div>
 
-
+    
+       <!-- PAGINA -->
 
 		<div id="page" class="container">
 
-			<div id="content">
+  			<!-- ADMINISTRADOR -->
+			
+			<div id='content_adm' class="content">
+
+				<div class="secao">
+					<div class="title">
+						<h1 style='font-size: 30px'>Gerenciamento de Administradores</h1>
+					</div>
+					<div class="div-bt-abas">
+						<div id="bt-aba-add-adm" class="bt-aba">
+							<div class="text">Adicionar Administrador</div>
+						</div>
+						<div id="bt-aba-alt-adm" class="bt-aba">
+							<div class="text">Alterar Administrador</div>
+						</div>
+						<div id="bt-aba-exc-adm" class="bt-aba">
+							<div class="text">Excluir Administrador</div>
+						</div>
+					</div>
+
+
+					<div class="aba aba-add-tipo-adm">
+						<div class="aba-bg">
+
+							<div class='aba-conteiner'>
+
+							<!--  form here -->
+
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="aba aba-alt-tipo-adm">
+						<div class="aba-bg">
+							<div class='aba-conteiner'>
+
+								<span class='aba-title'>Lista de Administradores</span>
+								<div class="lista-tipos">
+
+									<!--  for -->
+
+
+								</div>
+
+								<!--  form here -->
+								
+
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="aba aba-exc-tipo-adm">
+
+						<div class="aba-bg">
+							<div class='aba-conteiner'>
+							
+								<span class='aba-title'>Lista de Administradores</span>
+								<div class="lista-tipos">
+
+									<!--  for -->
+									
+								</div>
+
+ 								<!--  from -->
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			
+			
+			<!-- ------------------------------------------------------------------------------------------- -->
+			<!-- DESPESA  -->
+			
+				<div id='content_desp' class="content">
+				<div class="secao">
+					<div class="title">
+						<h1 style='font-size: 30px'>Gerenciamento de Tipo de Despesa</h1>
+					</div>
+					<div class="div-bt-abas">
+						<div id="bt-aba-add-desp" class="bt-aba">
+							<div class="text">Adicionar Despesa</div>
+						</div>
+						<div id="bt-aba-alt-desp" class="bt-aba">
+							<div class="text">Alterar Despesa</div>
+						</div>
+						<div id="bt-aba-exc-desp" class="bt-aba">
+							<div class="text">Excluir Despesa</div>
+						</div>
+					</div>
+
+
+					<div class="aba aba-add-tipo-desp">
+						<div class="aba-bg">
+
+							<div class='aba-conteiner'>
+
+								<!--  form here -->
+
+							</div>
+
+						</div>
+					</div>
+
+
+					<div class="aba aba-alt-tipo-desp">
+						<div class="aba-bg">
+							<div class='aba-conteiner'>
+
+								<span class='aba-title'>Lista de Despesa</span>
+								<div class="lista-tipos">
+								
+								<!--  for lista -->
+
+
+								</div>
+
+							   <!--  form here -->
+
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="aba aba-exc-tipo-desp">
+
+						<div class="aba-bg">
+							<div class='aba-conteiner'>
+							
+								<span class='aba-title'>Lista de Despesa</span>
+								<div class="lista-tipos">
+
+							   <!--  for -->
+
+								</div>
+
+ 						        <!-- form here -->
+ 						        
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+			<!-- SERVICO -->
+			
+			<div id='content_serv' class="content">
 
 				<div class="secao">
 					<div class="title">
@@ -182,6 +334,13 @@
 
 				</div>
 			</div>
+			
+			
+			
+			<!-- LAISON -->
+			
+			
+			
 		</div>
 
 
