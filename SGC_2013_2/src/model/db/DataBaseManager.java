@@ -1,30 +1,77 @@
 package model.db;
+
+import java.util.ArrayList;
+import java.util.Vector;
+
+import model.business.Administrador;
+import model.business.Servico;
+
 //facade
 public class DataBaseManager {
-	
+
 	private static DataBaseManager singleton;
-	
-	private DataBaseManager(){}
-	
-	public static DataBaseManager getInstance(){
-		if(singleton == null)
+	AdministradoresDAO admDAO = new AdministradoresDAO();
+	ServicoDAO servicoDAO = new ServicoDAO();
+
+	private DataBaseManager() {
+	}
+
+	public static DataBaseManager getInstance() {
+		if (singleton == null)
 			singleton = new DataBaseManager();
-		
-		return singleton;	
+
+		return singleton;
+	}
+
+	// métodos de serviço
+	public void deleteServico(String id) {
+		servicoDAO.deleteServico(id);
+	}
+
+	public void addServico(String nome) {
+		servicoDAO.addServico(nome);
+	}
+
+	public void alterServico(String nome, String id) {
+		servicoDAO.alterServico(nome, id);
 	}
 	
-	public void deleteServico(String id){
-		ServicoDAO.deleteServico(id);
+	public ArrayList<Servico> getListServico() {
+		return servicoDAO.getListServico();
+	} 
+	
+	// métodos de Administrador
+	public int inserirAdministradorBD(Administrador adm) {
+		return admDAO.inserirAdministrador(adm);
 	}
-	
-	public static void addServico(String nome){
-		ServicoDAO.addServico(nome);
+
+	public int alterarAdministradorBD(Administrador adm) {
+		return admDAO.alterarAdministrador(adm);
 	}
-	
-	public static void alterServico(String nome, String id){
-		ServicoDAO.alterServico(nome,id);
+
+	public int deletarAdministradorbd(Administrador adm) {
+		return admDAO.deletarAdministrador(adm);
+
 	}
-	
-	
-	
+
+	public Administrador verificarLogin(String usuario, String senha) {
+		return admDAO.verificarLogin(usuario, senha);
+
+	}
+
+	public Vector<Administrador> listarAdministradoresbd() {
+		try {
+			AdministradoresDAO administradorDAO = new AdministradoresDAO();
+			Vector<Administrador> vetorAdministradores = administradorDAO
+					.listarTodosAdministradores();
+			return vetorAdministradores;
+
+		} catch (Exception e) {
+			System.out
+					.println("FacadeDAO: Erro ao listar todos os administradores");
+			return null;
+		}
+
+	}
+
 }

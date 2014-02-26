@@ -7,18 +7,18 @@ import javax.servlet.ServletException;
 import model.db.DAO;
 import model.db.DataBaseManager;
 
-public class AddCommand extends Command {
+public class DeleteServicoCmd extends Command {
 
 	@Override
 	public void execute() {
-
-		DataBaseManager db= DataBaseManager.getInstance(); 
-		String nome = request.getParameter("nome");
-
-		if (nome != null) {
-			db.addServico(nome);
+		
+		DataBaseManager db = DataBaseManager.getInstance();
+		String id =request.getParameter("idservico");
+		
+		if (id != null) { 
+			 db.deleteServico(id);
 		}
-
+				  
 		try {
 			forward("administrador.jsp");
 		} catch (ServletException e) {
@@ -28,7 +28,7 @@ public class AddCommand extends Command {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
 	}
 
 }

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import model.SisCond;
+import model.SGC;
 import model.business.Servico;
 
 public class DAO {
@@ -124,7 +124,7 @@ public class DAO {
 			if (DAO.getInstance().getRowCount(rs) > 0) {			
 				while (rs.next()) {	
 					System.out.println(++i);
-					Servico s = SisCond.getInstance().newInstanceOfServico(rs.getInt("idtbtiposervico"),rs.getString("nome"));
+					Servico s = SGC.getInstance().newInstanceOfServico(rs.getInt("idtbtiposervico"),rs.getString("nome"));
 					listaServico.add(s);
 				}
 

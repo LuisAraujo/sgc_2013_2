@@ -9,8 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.SGC;
 import model.business.Servico;
-import model.db.ServicoDAO;
 
 public abstract class Command {
 
@@ -48,7 +48,7 @@ public abstract class Command {
 
 	public void forward(String forward) throws ServletException, IOException {
 
-		ArrayList<Servico> listaServico = ServicoDAO.getListServico();
+		ArrayList<Servico> listaServico = SGC.getInstance().getListServico();
 
 		request.setAttribute("listaServico", listaServico);
 

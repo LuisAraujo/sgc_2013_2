@@ -7,17 +7,16 @@ import javax.servlet.ServletException;
 import model.db.DAO;
 import model.db.DataBaseManager;
 
-public class AlterCommand extends Command {
+public class AddServicoCmd extends Command {
 
 	@Override
 	public void execute() {
 
-		DataBaseManager db = DataBaseManager.getInstance();
-		String id = request.getParameter("idservico");
+		DataBaseManager db= DataBaseManager.getInstance(); 
 		String nome = request.getParameter("nome");
 
-		if (id != null) {
-			db.alterServico(nome, id);
+		if (nome != null) {
+			db.addServico(nome);
 		}
 
 		try {

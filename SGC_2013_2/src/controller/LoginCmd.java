@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import model.business.SessionManager;
 import model.db.DAO;
 
-public class LoginCommand extends Command{
+public class LoginCmd extends Command{
 
 	@Override
 	public void execute() {

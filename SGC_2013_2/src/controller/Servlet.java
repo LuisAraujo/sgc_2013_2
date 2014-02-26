@@ -34,10 +34,10 @@ public class Servlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		mappings = new HashMap();
 		// mapping
-		mappings.put("login", "controller.LoginCommand");
-		mappings.put("add_tipo", "controller.AddCommand");
-		mappings.put("del_tipo", "controller.DeleteCommand");
-		mappings.put("alt_tipo", "controller.AlterCommand");
+		mappings.put("LoginCmd", "controller.LoginCmd");
+		mappings.put("AddServicoCmd", "controller.AddServicoCmd");
+		mappings.put("DeleteServicoCmd", "controller.DeleteServicoCmd");
+		mappings.put("AlterServicoCmd", "controller.AlterServicoCmd");
 	};
 
 	protected void service(HttpServletRequest request,

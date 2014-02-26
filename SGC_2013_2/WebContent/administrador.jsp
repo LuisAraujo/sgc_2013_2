@@ -246,7 +246,7 @@
 								<form id="form_add" name="form_add" method="post" action='SGCServlet'>
 									<span class='aba-title'>Nome Tipo</span>
 									<input class='inp' name='nome' id="inp-nome-tipo" type='text' />
-									<input type="hidden" name="cmd" value="add_tipo" />
+									<input type="hidden" name="cmd" value="AddServicoCmd" />
 									<button id="bt_add_tipo">Adicionar</button>
 								</form>
 
@@ -286,7 +286,7 @@
 									<input class="inp"  id="inp-alt" type="text" name="nome" value="" >
 									
 									<input id='inp_alt_servico' type="hidden" name="idservico" value="0" />
-									<input type="hidden" name="cmd" value="alt_tipo" />
+									<input type="hidden" name="cmd" value="AlterServicoCmd" />
 								</form>
 								
 								<button id="bt-alt-tipo">Alterar</button>
@@ -324,7 +324,7 @@
 
  							<form id="form_exc" name="form_exc" method="post" action='SGCServlet'>
 								<input id='inp_exc_servico' type="hidden" name="idservico" value="0" />
-								<input type="hidden" name="cmd" value="del_tipo" />
+								<input type="hidden" name="cmd" value="DeleteServicoCmd" />
 							</form>
 							
 							<button name="bt-exc-tipo" id="bt-exc-tipo">Excluir</button>
