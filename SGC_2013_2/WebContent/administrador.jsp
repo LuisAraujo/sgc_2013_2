@@ -167,9 +167,14 @@
 						<div class="aba-bg">
 
 							<div class='aba-conteiner'>
-
-								<!--  form here -->
-
+								<form id="form_add" name="form_add" method="post" action='SGCServlet'>
+									<span class='aba-title'>Nome Tipo</span>
+									<input class='inp' name='nome' id="inp-nome-tipo" type='text' />
+									<span class='aba-title'>Valor Tipo</span>
+									<input class='inp' name='valor' id="inp-nome-tipo" type='text' />
+									<input type="hidden" name="cmd" value="AddDespesaCmd" />
+									<button id="bt_add_tipo">Adicionar</button>
+								</form>
 							</div>
 
 						</div>
@@ -208,7 +213,12 @@
 
 								</div>
 
- 						        <!-- form here -->
+ 						        <form id="form_despesa_exc" name="form_despesa_exc" method="post" action='SGCServlet'>
+									<input id='inp_exc_servico' type="hidden" name="idservico" value="0" />
+									<input type="hidden" name="cmd" value="DeleteDespesaCmd" />
+								</form>
+							
+								<button name="bt-exc-tipo" id="bt-exc-tipo">Excluir</button>
  						        
 							</div>
 						</div>
