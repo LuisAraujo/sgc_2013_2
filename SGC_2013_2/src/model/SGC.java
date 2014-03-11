@@ -3,6 +3,7 @@ package model;
 
 import java.util.ArrayList;
 
+import model.business.Despesa;
 import model.business.Servico;
 import model.db.DataBaseManager;
 
@@ -29,4 +30,11 @@ public class SGC {
 		
 		return dbm.getListServico();
 	}
+
+	public ArrayList<Despesa> getListDespesas() {
+		
+		return dbm.getListDespesa();
+	}
+
+	
 }

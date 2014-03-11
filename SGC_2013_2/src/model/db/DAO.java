@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.SGC;
+import model.business.Despesa;
 import model.business.Servico;
 
 public class DAO {
@@ -136,6 +137,33 @@ public class DAO {
 		}
 
 		return listaServico;
+	
+	}
+
+	public ArrayList<Despesa> getListDespesa() {
+		int i = 0;
+		ArrayList<Despesa> listaDespesa = new ArrayList<Despesa>();
+
+		
+		try {
+			Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,  ResultSet.CONCUR_UPDATABLE);  
+			ResultSet rs = st.executeQuery("select * from tbtipodespesa");
+		
+			if (DAO.getInstance().getRowCount(rs) > 0) {			
+				while (rs.next()) {	
+					System.out.println(++i);
+					Despesa s = new Despesa(rs.getInt("idtbtipodespesa"), rs.getString("nome"),rs.getDouble("valor"));
+					listaDespesa.add(s);
+				}
+
+			}
+
+		} catch (Exception e) {
+			System.out.println("Nao foi possível recuperar dados");
+			return null;
+		}
+
+		return listaDespesa;
 	
 	}
 }

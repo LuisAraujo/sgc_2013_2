@@ -46,14 +46,5 @@ public abstract class Command {
 
 	public abstract void execute();
 
-	public void forward(String forward) throws ServletException, IOException {
-
-		ArrayList<Servico> listaServico = SGC.getInstance().getListServico();
-
-		request.setAttribute("listaServico", listaServico);
-
-		RequestDispatcher view = request.getRequestDispatcher(forward);
-		view.forward(request, response);
-	}
-
+	
 }

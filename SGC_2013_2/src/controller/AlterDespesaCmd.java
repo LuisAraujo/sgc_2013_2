@@ -8,20 +8,19 @@ import javax.servlet.ServletException;
 
 import model.SGC;
 import model.business.Servico;
-import model.db.DAO;
 import model.db.DataBaseManager;
 
-public class AlterServicoCmd extends Command {
-
+public class AlterDespesaCmd extends Command{
 	@Override
 	public void execute() {
 
 		DataBaseManager db = DataBaseManager.getInstance();
-		String id = request.getParameter("idservico");
+		String id = request.getParameter("iddespesa");
 		String nome = request.getParameter("nome");
+		String valor = request.getParameter("valor");
 
 		if (id != null) {
-			db.alterServico(nome, id);
+			db.alterDespesa(id,nome,valor);
 		}
 
 		try {
@@ -41,7 +40,7 @@ public class AlterServicoCmd extends Command {
 
 		ArrayList<Servico> listaServico = SGC.getInstance().getListServico();
 
-		request.setAttribute("listaServico", listaServico);
+		request.setAttribute("listaDespesa", listaServico);
 
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);

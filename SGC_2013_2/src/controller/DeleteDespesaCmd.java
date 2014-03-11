@@ -7,23 +7,21 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
 import model.SGC;
-import model.business.Servico;
-import model.db.DAO;
+import model.business.Despesa;
 import model.db.DataBaseManager;
 
-public class AlterServicoCmd extends Command {
+public class DeleteDespesaCmd extends Command {
 
-	@Override
-	public void execute() {
-
+	
+public void execute() {
+		
 		DataBaseManager db = DataBaseManager.getInstance();
-		String id = request.getParameter("idservico");
-		String nome = request.getParameter("nome");
-
-		if (id != null) {
-			db.alterServico(nome, id);
+		String id =request.getParameter("iddespesa");
+		
+		if (id != null) { 
+			 db.deleteDespesa(id);
 		}
-
+				  
 		try {
 			redireciona("administrador.jsp");
 		} catch (ServletException e) {
@@ -33,19 +31,18 @@ public class AlterServicoCmd extends Command {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
 	}
 	
 	
 	public void redireciona(String forward) throws ServletException, IOException {
 
-		ArrayList<Servico> listaServico = SGC.getInstance().getListServico();
+		ArrayList<Despesa> listaDespesa = SGC.getInstance().getListDespesas();
 
-		request.setAttribute("listaServico", listaServico);
+		request.setAttribute("listaDespesa", listaDespesa);
 
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);
 		
 	}
-
 }

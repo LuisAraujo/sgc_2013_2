@@ -1,9 +1,14 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
+import model.SGC;
+import model.business.Despesa;
+import model.business.Servico;
 import model.db.DAO;
 import model.db.DataBaseManager;
 
@@ -20,7 +25,7 @@ public class AddServicoCmd extends Command {
 		}
 
 		try {
-			forward("administrador.jsp");
+			redireciona("administrador.jsp");
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,6 +34,18 @@ public class AddServicoCmd extends Command {
 			e.printStackTrace();
 		}
 
+	}
+	
+	
+	public void redireciona(String forward) throws ServletException, IOException {
+
+		ArrayList<Servico> listaServico = SGC.getInstance().getListServico();
+
+		request.setAttribute("listaServico", listaServico);
+
+		RequestDispatcher view = request.getRequestDispatcher(forward);
+		view.forward(request, response);
+		
 	}
 
 }

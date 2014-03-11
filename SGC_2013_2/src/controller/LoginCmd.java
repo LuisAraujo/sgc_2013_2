@@ -3,9 +3,13 @@ package controller;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
+import model.SGC;
+import model.business.Servico;
 import model.business.SessionManager;
 import model.db.DAO;
 
@@ -29,7 +33,7 @@ public class LoginCmd extends Command{
 						SessionManager sm = SessionManager.getInstance(request);
 						sm.setAtribulte(nome);
 						try {
-							forward("administrador.jsp");
+							redireciona("administrador.jsp");
 						} catch (ServletException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -52,6 +56,19 @@ public class LoginCmd extends Command{
 				}
 
 			}
+		
+	}
+	
+	
+	
+	public void redireciona(String forward) throws ServletException, IOException {
+
+		ArrayList<Servico> listaServico = SGC.getInstance().getListServico();
+
+		request.setAttribute("listaServico", listaServico);
+
+		RequestDispatcher view = request.getRequestDispatcher(forward);
+		view.forward(request, response);
 		
 	}
 	

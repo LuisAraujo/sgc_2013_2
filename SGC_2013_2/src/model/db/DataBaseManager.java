@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 import model.business.Administrador;
+import model.business.Despesa;
 import model.business.Servico;
 
 //facade
@@ -12,6 +13,7 @@ public class DataBaseManager {
 	private static DataBaseManager singleton;
 	AdministradoresDAO admDAO = new AdministradoresDAO();
 	ServicoDAO servicoDAO = new ServicoDAO();
+	DespesaDAO despesaDAO = new DespesaDAO();
 
 	private DataBaseManager() {
 	}
@@ -23,7 +25,7 @@ public class DataBaseManager {
 		return singleton;
 	}
 
-	// métodos de serviço
+	// m≈Ωtodos de serviÔøΩo
 	public void deleteServico(String id) {
 		servicoDAO.deleteServico(id);
 	}
@@ -40,7 +42,7 @@ public class DataBaseManager {
 		return servicoDAO.getListServico();
 	} 
 	
-	// métodos de Administrador
+	// m≈Ωtodos de Administrador
 	public int inserirAdministradorBD(Administrador adm) {
 		return admDAO.inserirAdministrador(adm);
 	}
@@ -72,6 +74,24 @@ public class DataBaseManager {
 			return null;
 		}
 
+	}
+	
+    //m√©todo de despesa
+	public void addDespesa(String nome, String valor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public ArrayList<Despesa> getListDespesa() {
+		return despesaDAO.getListDespesa();
+	}
+
+	public void deleteDespesa(String id) {
+		despesaDAO.deleteDespesa(id);
+	}
+
+	public void alterDespesa(String id, String nome, String valor) {
+		despesaDAO.alterDespesa(id, nome, valor);
 	}
 
 }
