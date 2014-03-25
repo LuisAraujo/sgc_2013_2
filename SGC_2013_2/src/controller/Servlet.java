@@ -39,16 +39,20 @@ public class Servlet extends HttpServlet {
 		mappings.put("AddServicoCmd", "controller.AddServicoCmd");
 		mappings.put("DeleteServicoCmd", "controller.DeleteServicoCmd");
 		mappings.put("AlterServicoCmd", "controller.AlterServicoCmd");
+		mappings.put("GetServicoCmd", "controller.GetServicoCmd");
+		
 		
 		//Despesa
 		mappings.put("AddDespesaCmd", "controller.AddDespesaCmd");
 		mappings.put("DeleteDespesaCmd", "controller.DeleteDespesaCmd");
 		mappings.put("AlterDespesaCmd", "controller.AlterDespesaCmd");
+		mappings.put("GetDespesaCmd", "controller.GetDespesaCmd");
 		
 		//Administrador
 		mappings.put("AddAdministradorCmd", "controller.AddAdministradorCmd");
 		mappings.put("DeleteAdministradorCmd", "controller.DeleteAdministradorCmd");
 		mappings.put("AlterAdministradorCmd", "controller.AlterAdministradorCmd");
+		//mappings.put("GetAdministradorCmd", "controller.GetAdministradorCmd");
 		
 		//Laison?
 		

@@ -165,24 +165,29 @@ function init_servico(){
 	
 	
 	
-	$(".tipos").click(function(){
+	$(".tipos-serv").click(function(){
 		
 		$("#inp-alt").val( jQuery.trim($(this).children(".nome").text()) );
-		$(".tipos").css('background','#eee');
-		$(".tipos").css('color','#000');
+		$(".tipos-serv").css('background','#eee');
+		$(".tipos-serv").css('color','#000');
 		$(this).css('background','linear-gradient(to bottom, rgba(255,200,0, .5), rgba(255,170,0, .7))');
 		$(this).css('color','#fff');
 		elementTarget = jQuery.trim($(this).children(".id").text());
 	});
 	
-	$(".tipos").mouseover(function(){
+	
+	
+	
+	
+	
+	$(".tipos-serv").mouseover(function(){
 	 var elementTargetTemporario = jQuery.trim($(this).children(".id").text());
 	  
 	  if(elementTarget!= elementTargetTemporario)
 		$(this).css('background','linear-gradient(to bottom, transparent, rgba(255,200,0, .5))');
 	});
 	
-	$(".tipos").mouseout(function(){
+	$(".tipos-serv").mouseout(function(){
 	
 	  var elementTargetTemporario = jQuery.trim($(this).children(".id").text());
 	  
@@ -484,8 +489,11 @@ function init_despesa(){
 	
 	
 	$(".tipos-desp").click(function(){
+	    alert('s');
 		
-		$("#inp-alt-desp").val( jQuery.trim($(this).children(".nome").text()) );
+	    $("#inp-alt-desp-nome").val( jQuery.trim($(this).children(".nome").text()) );
+		$("#inp-alt-desp-preco").val( jQuery.trim($(this).children(".nome").text()) );
+		
 		$(".tipos-desp").css('background','#eee');
 		$(".tipos-desp").css('color','#000');
 		$(this).css('background','linear-gradient(to bottom, rgba(255,200,0, .5), rgba(255,170,0, .7))');

@@ -9,15 +9,15 @@
 }
 
 #content_adm{
-	display:block;
+	/*display:none*/;
 }
 
 #content_desp{
-	display:none;
+	/*display:none*/;
 }
 
 #content_serv{
-	display:none;
+	/*display:none*/;
 }
 
 #content_usu{
