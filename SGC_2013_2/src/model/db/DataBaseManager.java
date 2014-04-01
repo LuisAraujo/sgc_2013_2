@@ -78,7 +78,7 @@ public class DataBaseManager {
 	
     //método de despesa
 	public void addDespesa(String nome, String valor) {
-		// TODO Auto-generated method stub
+		despesaDAO.addDespesa(nome, Double.parseDouble(valor) ); 
 		
 	}
 

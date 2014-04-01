@@ -7,6 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
 import model.SGC;
+import model.business.Despesa;
 import model.business.Servico;
 import model.db.DataBaseManager;
 
@@ -17,14 +18,14 @@ public class AlterDespesaCmd extends Command{
 		DataBaseManager db = DataBaseManager.getInstance();
 		String id = request.getParameter("iddespesa");
 		String nome = request.getParameter("nome");
-		String valor = request.getParameter("valor");
+		String valor = request.getParameter("preco");
 
-		if (id != null) {
+		if ((id != null) && (nome != null) && ( valor != null) ) {
 			db.alterDespesa(id,nome,valor);
 		}
 
 		try {
-			redireciona("administrador.jsp");
+			redireciona("adm_despesa.jsp");
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -38,13 +39,13 @@ public class AlterDespesaCmd extends Command{
 	
 	public void redireciona(String forward) throws ServletException, IOException {
 
-		ArrayList<Servico> listaServico = SGC.getInstance().getListServico();
+		ArrayList<Despesa> listaDespesa = SGC.getInstance().getListDespesas();
 
-		request.setAttribute("listaDespesa", listaServico);
+		request.setAttribute("listaDespesa", listaDespesa);
 
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);
-		
+
 	}
 
 }

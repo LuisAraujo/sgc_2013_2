@@ -23,7 +23,7 @@ public void execute() {
 		}
 				  
 		try {
-			redireciona("administrador.jsp");
+			redireciona("adm_despesa.jsp");
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

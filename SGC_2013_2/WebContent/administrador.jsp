@@ -14,6 +14,9 @@
 <link href="style/fonts.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link rel='stylesheet' type='text/css' href='style/style.css' />
+
+
+
 <link rel='stylesheet' type='text/css' href='style/normalize.css' />
 <script type='text/javascript' src='js/jquery.js'></script>
 <script type='text/javascript' src='js/script.js'></script>
@@ -50,14 +53,21 @@
 					<p>Atividade de java web</p>
 				</div>
 			</div>
-			<div id="menu" class="container">
-				<ul>
-					<li id='bt_administrador' class="current_page_item"> <span>Administradores</span> </li>
+		<div id="menu" class="container" style='width:100%; height:120px; '>
+			<div style='width:1150px; margin-left:auto; margin-right:auto'>
+					
+					<li id='bt_administrador' > 
+						<form method="post" action='SGCServlet'>
+						<input type="hidden" name="cmd" value="GetAdmiministradorCmd" />
+						<button class='bt_acesso'>Administradores</button>
+						</form> 
+					</li>
+									
 					
 					<li id='bt_despesa' > 
 						<form method="post" action='SGCServlet'>
 						<input type="hidden" name="cmd" value="GetDespesaCmd" />
-						<button>Despesas</button>
+						<button class='bt_acesso'>Despesas</button>
 						</form> 
 					</li>
 					
@@ -67,41 +77,24 @@
 					<li id='bt_servico' > 
 						<form method="post" action='SGCServlet'>
 						<input type="hidden" name="cmd" value="GetServicoCmd" />
-						<button>Serviços</button>
+						<button class='bt_acesso'>Serviços</button>
 						</form> 
 					</li>
-					
-					
-					
-					<li id='bt_usuario'>  <span> btv04 </span>  </li>
-				</ul>
+				
+				</div>
 			</div>
 		</div>
 
     
        <!-- PAGINA -->
 
-		<div id="page" class="container">
-
-  			
-			
-			
-		</div>
-
-
-
-
-
-		<div id="portfolio-wrapper">
-			<div id="portfolio" class="container"></div>
+		<div id="page" class="container" style='width:100%; height:758px; margin-top:0; padding-top:0px'>	
+			<img class='img_cond' src='images/san_rafael.jpg' ></img>
 		</div>
 	</div>
-	<div id="footer">
-		<p>
-			Copyright (c) 2013 Sitename.com. All rights reserved. Design by <a
-				href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.
-			Photos by <a href="http://fotogrph.com/">Fotogrph</a>.
-		</p>
+	
+<div id="footer">
+		<p>Copyleft (c) 2014 IFBA - Santo Amaro. All rights not reserved. Design by Andreia Pinheiro, Fernando Moreira e Luis Gustavo.
 	</div>
 </body>
 </html>

@@ -51,12 +51,7 @@
 				</div>
 			</div>
 			<div id="menu" class="container">
-				<ul>
-					<li id='bt_administrador' class="current_page_item"> <span>Administradores</span> </li>
-					<li id='bt_despesa' > <span> Despesas </span></li>
-					<li id='bt_servico' > <span> Serviços </span> </li>
-					<li id='bt_usuario'>  <span> btv04 </span>  </li>
-				</ul>
+			  <a style='text-align:left; line-height:0px'  href='administrador.jsp' >	<img  class='menu' src='images/menu.png'></img></a>
 			</div>
 		</div>
 
@@ -148,36 +143,41 @@
 
 
 					<div class="aba aba-exc-tipo">
-
 						<div class="aba-bg">
 							<div class='aba-conteiner'>
-							
+
 								<span class='aba-title'>Lista de Tipos</span>
 								<div class="lista-tipos">
 
 									<%
-										//SisCondDAO dao = SisCondDAO.getInstance();
-										//ArrayList<Servico> listaServico = dao.getListServico();
-										for (Servico s : listaServico) {
+										
+									
+									for (Servico s : listaServico) {
 									%>
 
-									<div class="tipos">
+									<div class="tipos tipos-serv">
 										<div class="id"><%=s.getId()%></div>
 										<div class="nome"><%=s.getNome()%></div>
+										
+										
 									</div>
 
 									<%
 										}
 									%>
 
-								</div>
 
- 							<form id="form_exc" name="form_exc" method="post" action='SGCServlet'>
-								<input id='inp_exc_servico' type="hidden" name="idservico" value="0" />
-								<input type="hidden" name="cmd" value="DeleteServicoCmd" />
-							</form>
+								</div>
+								
+								<form id="form_exc_servico" name="form_exc" method="post" action='SGCServlet'>
 							
-							<button name="bt-exc-tipo" id="bt-exc-tipo">Excluir</button>
+									
+									<input id='inp_exc_servico' type="hidden" name="idservico" value="0" />
+									<input type="hidden" name="cmd" value="DeleteServicoCmd" />
+								</form>
+								
+								<button id="bt-exc-tipo">Excluir</button>
+
 							</div>
 						</div>
 					</div>

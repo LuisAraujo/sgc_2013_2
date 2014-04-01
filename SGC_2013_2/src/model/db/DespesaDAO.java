@@ -17,11 +17,11 @@ public class DespesaDAO {
 
 	protected static void addDespesa(String nome, Double valor) {
 		DAO tipodespesaDAO = DAO.getInstance();
-		String query = "insert into tbtipodespesa value(null,'" + nome + "','"+valor+")";
+		String query = "insert into tbtipodespesa value(null,'" + nome + "',"+valor+")";
 		tipodespesaDAO.executarSQL(query);
 	}
 
-	protected static void alterDespesa(String nome, String id, String valor) {
+	protected static void alterDespesa(String id, String nome, String valor) {
 		DAO tipodespesaDAO = DAO.getInstance();
 		String query = "update tbtipodespesa set nome ='" + nome
 				+ "', valor ="+valor+" where idtbtipodespesa=" + id + "";

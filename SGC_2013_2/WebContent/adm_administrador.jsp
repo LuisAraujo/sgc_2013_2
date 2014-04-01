@@ -51,12 +51,7 @@
 				</div>
 			</div>
 			<div id="menu" class="container">
-				<ul>
-					<li id='bt_administrador' class="current_page_item"> <span>Administradores</span> </li>
-					<li id='bt_despesa' > <span> Despesas </span></li>
-					<li id='bt_servico' > <span> Serviços </span> </li>
-					<li id='bt_usuario'>  <span> btv04 </span>  </li>
-				</ul>
+			  <a style='text-align:left; line-height:0px'  href='administrador.jsp' >	<img  class='menu' src='images/menu.png'></img></a>
 			</div>
 		</div>
 

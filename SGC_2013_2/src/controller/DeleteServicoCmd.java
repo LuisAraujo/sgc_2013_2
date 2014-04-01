@@ -24,7 +24,7 @@ public class DeleteServicoCmd extends Command {
 		}
 				  
 		try {
-			redireciona("administrador.jsp");
+			redireciona("adm_servico.jsp");
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -51,11 +51,7 @@
 				</div>
 			</div>
 			<div id="menu" class="container">
-				<ul>
-					<li id='bt_administrador' class="current_page_item"> <span>Administradores</span> </li>
-					<li id='bt_servico' > <span> Serviços </span> </li>
-					<li id='bt_usuario'>  <span> Adm </span>  </li>
-				</ul>
+			  <a style='text-align:left; line-height:0px'  href='administrador.jsp' >	<img  class='menu' src='images/menu.png'></img></a>
 			</div>
 		</div>
 
@@ -108,7 +104,7 @@
 							<div class='aba-conteiner'>
 
 								<span class='aba-title'>Lista de Despesa</span>
-								<div class="lista-tipos">
+								<div class="lista-tipos lp-desp" style='width:500px'>
 									<%
 										
 									ArrayList<Despesa> listaDespesa = (ArrayList<Despesa>)request.getAttribute("listaDespesa");
@@ -118,7 +114,7 @@
 									<div class="tipos tipos-desp">
 										<div class="id"><%=d.getId()%></div>
 										<div class="nome"><%=d.getNome()%></div>
-										<!--   falta o d.getPreco. Atentar para o css -->
+										<div class="valor"><%=d.getValor()%></div>
 									</div>
 
 									<%
@@ -127,15 +123,15 @@
 
 								</div>
 
-							  <form id="form_alt_desp" name="form_alt" method="post" action='SGCServlet'>
+							  <form id="form_alt_desp" name="form_alt_desp" method="post" action='SGCServlet'>
 									<span class='aba-title'>Novo Nome </span> 
 									<input class="inp"  id="inp-alt-desp-nome" type="text" name="nome" value="" >
 									<input class="inp"  id="inp-alt-desp-preco" type="text" name="preco" value="" >
-									<input id='inp_alt_servico' type="hidden" name="idservico" value="0" />
+									<input id='inp_alt_despesa' type="hidden" name="iddespesa" value="0" />
 									<input type="hidden" name="cmd" value="AlterDespesaCmd" />
-								</form>
 								
-								<button id="bt-alt-tipo">Alterar</button>
+</form>								
+								<button id="bt-alt-tipo-desp">Alterar</button>
 
 							</div>
 						</div>
@@ -159,7 +155,7 @@
 									<div class="tipos tipos-desp">
 										<div class="id"><%=d.getId()%></div>
 										<div class="nome"><%=d.getNome()%></div>
-										<!--   falta o d.getPreco. Atentar para o css -->
+										<div class="valor"><%=d.getValor()%></div>
 									</div>
 
 									<%
@@ -170,11 +166,11 @@
 								</div>
 
  						        <form id="form_despesa_exc" name="form_despesa_exc" method="post" action='SGCServlet'>
-									<input id='inp_exc_servico' type="hidden" name="idservico" value="0" />
+									<input id='inp_exc_despesa' type="hidden" name="iddespesa" value="0" />
 									<input type="hidden" name="cmd" value="DeleteDespesaCmd" />
 								</form>
 							
-								<button name="bt-exc-tipo" id="bt-exc-tipo">Excluir</button>
+								<button name="bt-exc-tipo" id="bt-exc-tipo-desp">Excluir</button>
  						        
 							</div>
 						</div>

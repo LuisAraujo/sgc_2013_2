@@ -36,7 +36,7 @@ public class AddDespesaCmd extends Command {
 	//	ProjCondominio.getInstance().insertDespesa(nome, valor);
 
 		try {
-			redireciona("administrador.jsp");
+			redireciona("adm_despesa.jsp");
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

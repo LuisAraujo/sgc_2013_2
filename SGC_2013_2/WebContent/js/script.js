@@ -6,6 +6,7 @@ $(window).ready(function(){
 	init_administrador();
 	init_servico(); 
 	init_despesa();
+	
 });
 
 // background: rgb(36,99,88);
@@ -472,7 +473,7 @@ function init_despesa(){
 		else if($('#inp-alt').val()==''){
 		  addDiv("O campo nome é obrigatório","alert");
 		}else{
-		  addDivAlt("Deseja alterar o tipo de id "+elementTarget+"?","sucess");
+		  addDivAltDesp("Deseja alterar o tipo de despesa de id "+elementTarget+"?","sucess");
 		}	
 	});
 	
@@ -481,7 +482,7 @@ function init_despesa(){
 		if(elementTarget==null)
           addDiv("Selecione um tipo!","alert");
 		else{
-		  addDivExc("Deseja excluir o tipo de id "+elementTarget+"?","sucess");
+		  addDivExcDesp("Deseja excluir o tipo de despesa de id "+elementTarget+"?","sucess");
 		}	
 	});
 	
@@ -489,10 +490,9 @@ function init_despesa(){
 	
 	
 	$(".tipos-desp").click(function(){
-	    alert('s');
-		
+	  
 	    $("#inp-alt-desp-nome").val( jQuery.trim($(this).children(".nome").text()) );
-		$("#inp-alt-desp-preco").val( jQuery.trim($(this).children(".nome").text()) );
+		$("#inp-alt-desp-preco").val( jQuery.trim($(this).children(".valor").text()) );
 		
 		$(".tipos-desp").css('background','#eee');
 		$(".tipos-desp").css('color','#000');
@@ -567,10 +567,33 @@ function addDivExc(cont,tipo){
 			$('.mensage-box').remove();  
 			$('.inp').val('');   
 			$('#inp_exc_servico').val(elementTarget);
-			$('#form_exc').submit();
+			$('#form_exc_servico').submit();
 	});
 
 }
+
+
+//despesa
+function addDivExcDesp(cont,tipo){
+    
+	if(tipo=='alert')
+	  var img = 'images/warning.png';
+	else if (tipo=='sucess')
+	   var img = 'images/success.png';
+	  
+	var conteudo = "<div class='mensage-box'><div class='box'><div class='msg'>	<img src='"+img+"'><span>"+cont+"</span></div><div class='bt-ok'><button id='bt-ok'>Ok</button></div></div></div>";
+	$('body').prepend(conteudo);
+	
+	$('#bt-ok').click(function(){ 
+			$('.mensage-box').remove();  
+			$('.inp').val('');   
+			$('#inp_exc_despesa').val(elementTarget);
+			$('#form_despesa_exc').submit();
+	});
+
+}
+
+
 
 function addDivAlt(cont,tipo){
     
@@ -588,6 +611,28 @@ function addDivAlt(cont,tipo){
 			$('#inp_alt_servico').val(elementTarget);
 		//	$('#inp-alt').val($('#inp-alt').text());
 			$('#form_alt').submit();
+	});
+
+}
+
+
+
+
+
+function addDivAltDesp(cont,tipo){
+    
+	if(tipo=='alert')
+	  var img = 'images/warning.png';
+	else if (tipo=='sucess')
+	   var img = 'images/success.png';
+	  
+	var conteudo = "<div class='mensage-box'><div class='box'><div class='msg'>	<img src='"+img+"'><span>"+cont+"</span></div><div class='bt-ok'><button id='bt-ok'>Ok</button></div></div></div>";
+	$('body').prepend(conteudo);
+	
+	$('#bt-ok').click(function(){ 
+			$('.mensage-box').remove();  
+			$('#inp_alt_despesa').val(elementTarget);
+			$('#form_alt_desp').submit();
 	});
 
 }
