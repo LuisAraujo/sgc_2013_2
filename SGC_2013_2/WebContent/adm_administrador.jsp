@@ -29,14 +29,10 @@
 
 		<%@ page import="model.business.*, model.db.*, java.util.ArrayList;"%>
 
-		<div>
-			Usuario =
-			<%=SessionManager.getAtribulte()%>
-		</div>
-
-		<div>
-			<a href='logout.jsp'> Sair </a>
-		</div>
+		<form method="post" action='SGCServlet'>
+			<input type="hidden" name="cmd" value="LogoffCmd" />
+			<button>Sair</button>
+		</form>
 
 
 
@@ -86,7 +82,24 @@
 
 							<div class='aba-conteiner'>
 
-							<!--  form here -->
+								<form id="form_add_adm" name="form_add_adm" method="post" action='SGCServlet'>
+									<span class='aba-title'>Nome</span>
+									<input class='inp' name='nome' id="inp-nome-adm" type='text' />
+									
+									<span class='aba-title'>CPF</span>
+									<input class='inp' name='cpf' id="inp-cpf-adm" type='text' />
+									
+									<span class='aba-title'>Username</span>
+									<input class='inp' name='username' id="inp-username-adm" type='text' />
+									
+									<span class='aba-title'>Senha</span>
+									<input class='inp' name='senha' id="inp-senha-adm" type='password' />
+									
+									
+									<input type="hidden" name="cmd" value="AddAdministradorCmd"" />
+									
+									<button id="bt_add_tipo">Adicionar</button>
+								</form>
 
 							</div>
 
@@ -94,19 +107,72 @@
 					</div>
 
 
-					<div class="aba aba-alt-tipo-adm">
-						<div class="aba-bg">
-							<div class='aba-conteiner'>
+					<div class="aba aba-alt-tipo-adm" style='height:620px'>
+						<div class="aba-bg" style='height:620px'>
+							<div class='aba-conteiner' >
 
 								<span class='aba-title'>Lista de Administradores</span>
-								<div class="lista-tipos">
+								
+								<div id='sobre-lista-desp-alt' class="lista-tipos"
+									style='width: 885px; height: 25px; overflow: hidden; margin-bottom: 0px;'>
+									<div class="atipos atipos-adm">
+										<div class="id">ID</div>
+										<div class="nome">NOME</div>
+										<div class="username">USERNAME</div>
+										<div class="cpf">CPF</div>
+										
+									</div>
+								</div>
+								
+								
+								<div class="lista-tipos" style="width:900px">
 
-									<!--  for -->
+									<%
+										
+									ArrayList<Administrador> listaAdministrador = (ArrayList<Administrador>)request.getAttribute("listaAdministrador");
+									for (Administrador a : listaAdministrador) {
+									%>
 
+									<div class="tipos tipos-adm"> 
+										<div class="id"><%=a.getId()%></div>
+										<div class="nome"><%=a.getNome()%></div>
+										<div class="username"><%=a.getUsuario()%></div>
+										<div class="cpf"><%=a.getCpf()%></div>
+									
+										
+									</div>
+
+									<%
+										}
+									%>
 
 								</div>
 
-								<!--  form here -->
+								<form id="form_alt_adm" name="form_alt_adm" method="post" action='SGCServlet'>
+									
+									<span class='aba-title'>Nome</span>
+									<input class='inp' name='nome' id="inp-nome-alt-adm" type='text' />
+									
+									<span class='aba-title'>CPF</span>
+									<input class='inp' name='cpf' id="inp-cpf-alt-adm" type='text' />
+									
+									<span class='aba-title'>Username</span>
+									<input class='inp' name='username' id="inp-username-alt-adm" type='text' />
+									
+									<span class='aba-title'>Senha</span>
+									<input class='inp' name='senha' id="inp-senha-alt-adm" type='password' />
+									
+									
+									<input id='inp_alt_administrador' type="hidden" name="idadministrador"
+										value="0" />
+									
+									<input type="hidden" name="cmd" value="AlterAdministradorCmd"" />
+									
+									
+								</form>
+								
+								
+								<button id="bt-alt-tipo-adm">Alterar</button>
 								
 
 							</div>
@@ -121,13 +187,54 @@
 							<div class='aba-conteiner'>
 							
 								<span class='aba-title'>Lista de Administradores</span>
-								<div class="lista-tipos">
+								
+								<div id='sobre-lista-desp-alt' class="lista-tipos"
+									style='width: 885px; height: 25px; overflow: hidden; margin-bottom: 0px;'>
+									<div class="atipos atipos-adm">
+										<div class="id">ID</div>
+										<div class="nome">NOME</div>
+										<div class="username">USERNAME</div>
+										<div class="cpf">CPF</div>
+										
+									</div>
+								</div>
+								
+								
+								
+								<div class="lista-tipos" style="width:900px">
 
-									<!--  for -->
+									<%
+										
+									for (Administrador a : listaAdministrador) {
+									%>
+
+									<div class="tipos tipos-adm"> 
+										<div class="id"><%=a.getId()%></div>
+										<div class="nome"><%=a.getNome()%></div>
+										<div class="username"><%=a.getUsuario()%></div>
+										<div class="cpf"><%=a.getCpf()%></div>
+									
+										
+									</div>
+
+									<%
+										}
+									%>
+
 									
 								</div>
 
- 								<!--  from -->
+ 							
+ 								<form id="form_exc_administrador" name="form_administrador_exc" method="post" action='SGCServlet'>								
+									<input id='inp_exc_administrador' type="hidden" name="idadministrador" value="0" />
+									<input type="hidden" name="cmd" value="DeleteAdministradorCmd" />
+								</form>
+								
+								<button id="bt-exc-tipo-adm">Excluir</button>
+ 							
+ 							
+ 							
+ 							
 							</div>
 						</div>
 					</div>

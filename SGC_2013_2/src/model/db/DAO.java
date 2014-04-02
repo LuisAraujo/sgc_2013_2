@@ -3,10 +3,13 @@ package model.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import model.SGC;
+import model.business.Administrador;
 import model.business.Despesa;
 import model.business.Servico;
 
@@ -124,7 +127,7 @@ public class DAO {
 		
 			if (DAO.getInstance().getRowCount(rs) > 0) {			
 				while (rs.next()) {	
-					System.out.println(++i);
+					//System.out.println(++i);
 					Servico s = SGC.getInstance().newInstanceOfServico(rs.getInt("idtbtiposervico"),rs.getString("nome"));
 					listaServico.add(s);
 				}
@@ -159,11 +162,51 @@ public class DAO {
 			}
 
 		} catch (Exception e) {
-			System.out.println("Nao foi possível recuperar dados");
 			return null;
 		}
 
 		return listaDespesa;
 	
+	}
+	
+	
+	
+
+	public ArrayList<Administrador> getListAdministrador() {
+		
+		int i=0;
+		ArrayList<Administrador> listaAdministrador = new ArrayList<Administrador>();
+		
+		try {
+				
+			Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,  ResultSet.CONCUR_UPDATABLE); 
+			ResultSet rs = st.executeQuery("Select * from tbadministrador");
+
+			if (DAO.getInstance().getRowCount(rs) > 0) {			
+				while (rs.next()) {	
+					System.out.println(++i);
+					
+					Administrador a = new Administrador();
+					
+					a.setId(rs.getInt("idtbadministrador"));	
+					a.setNome(rs.getString("nome"));
+					a.setUsuario(rs.getString("usuario"));
+					a.setCpf(rs.getString("cpf"));
+					
+				//	a.setId(rs.getInt("idtbadministrador"));	
+				//	a.setNome(rs.getString("nome"));
+				//	a.setUsuario(rs.getString("usuario"));
+				//	a.setCpf(rs.getString("cpf"));
+					
+					listaAdministrador.add(a);		
+				}
+
+			}
+			
+	     } catch (SQLException e) {
+	    	 return null;
+		}
+
+		return listaAdministrador;
 	}
 }

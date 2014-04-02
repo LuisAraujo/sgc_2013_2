@@ -3,6 +3,7 @@ package model;
 
 import java.util.ArrayList;
 
+import model.business.Administrador;
 import model.business.Despesa;
 import model.business.Servico;
 import model.db.DataBaseManager;
@@ -34,6 +35,11 @@ public class SGC {
 	public ArrayList<Despesa> getListDespesas() {
 		
 		return dbm.getListDespesa();
+	}
+
+	public ArrayList<Administrador> getListAdministrador() {
+		// TODO Auto-generated method stub
+		return dbm.getListAdministrador();
 	}
 
 	

@@ -246,6 +246,141 @@ padding-top:60px;
 
 
 
+
+/* adm  */
+
+.tipos-adm .nome{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(40% - 5px);  /* para Chrome */
+  width: -moz-calc(40% - 5px);     /* para Firefox */
+  width: calc(40% - 5px);  
+  border-right:1px #999 solid;
+}
+
+.tipos-adm .username{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(20% - 5px);  /* para Chrome */
+  width: -moz-calc(20% - 5px);     /* para Firefox */
+  width: calc(20% - 5px);  
+  
+  border-right:1px #999 solid;
+}
+
+
+.tipos-adm .cpf{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(20% - 5px);  /* para Chrome */
+  width: -moz-calc(20% - 5px);     /* para Firefox */
+  width: calc(20% - 5px);  
+}
+
+
+
+
+/* atipos*/
+
+
+.atipos{
+  height:30px;
+  width:100%;
+  background:#ddd;
+  border-bottom:1px #999 solid;
+}
+.atipos .id{
+
+  height:25px;
+  width:20%;
+  border-right:1px #999 solid;
+  float:left;
+  padding-top:5px;
+  text-align:center;
+  
+}
+
+.atipos .nome{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(80% - 1px);  /* para Chrome */
+  width: -moz-calc(80% - 1px);     /* para Firefox */
+  width: calc(80% - 1px);  
+}
+
+.atipos-desp .nome{
+	width:60%;
+	border-right:1px #999 solid;
+}
+
+
+.atipos .valor{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(20% - 5px);  /* para Chrome */
+  width: -moz-calc(20% - 5px);     /* para Firefox */
+  width: calc(20% - 5px);  
+}
+
+
+/* amd */
+
+.atipos-adm .nome{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(40% - 5px);  /* para Chrome */
+  width: -moz-calc(40% - 5px);     /* para Firefox */
+  width: calc(40% - 5px);  
+  
+	border-right:1px #999 solid;
+}
+
+
+.atipos-adm .username{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(20% - 5px);  /* para Chrome */
+  width: -moz-calc(20% - 5px);     /* para Firefox */
+  width: calc(20% - 5px);  
+  border-right:1px #999 solid;
+}
+
+.atipos-adm .cpf{
+  float:left;
+  height:25px;
+  text-align:center;
+  padding-top:5px;
+  
+  width: -webkit-calc(20% - 5px);  /* para Chrome */
+  width: -moz-calc(20% - 5px);     /* para Firefox */
+  width: calc(20% - 5px);  
+}
+
+
+
+
+
 .mensage-box{
 
 	position:fixed;

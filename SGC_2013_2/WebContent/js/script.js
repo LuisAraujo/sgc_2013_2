@@ -7,6 +7,12 @@ $(window).ready(function(){
 	init_servico(); 
 	init_despesa();
 	
+	
+	$('#ajax').click(function(){
+		getTabelaServico();
+		console.log('ajax')
+	});
+	
 });
 
 // background: rgb(36,99,88);
@@ -313,7 +319,7 @@ function init_administrador(){
 		else if($('#inp-alt').val()==''){
 		  addDiv("O campo nome é obrigatório","alert");
 		}else{
-		  addDivAlt("Deseja alterar o tipo de id "+elementTarget+"?","sucess");
+		  addDivAltAdm("Deseja alterar o adimistrador de id "+elementTarget+"?","sucess");
 		}	
 	});
 	
@@ -322,7 +328,7 @@ function init_administrador(){
 		if(elementTarget==null)
           addDiv("Selecione um tipo!","alert");
 		else{
-		  addDivExc("Deseja excluir o tipo de id "+elementTarget+"?","sucess");
+		  addDivExcAdm("Deseja excluir o administrador de id "+elementTarget+"?","sucess");
 		}	
 	});
 	
@@ -331,7 +337,12 @@ function init_administrador(){
 	
 	$(".tipos-adm").click(function(){
 		
-		$("#inp-alt-adm").val( jQuery.trim($(this).children(".nome").text()) );
+		$("#inp-alt-adm").val( jQuery.trim($(this).children(".id").text()) );
+		$("#inp-nome-alt-adm").val( jQuery.trim($(this).children(".nome").text()) );
+		$("#inp-cpf-alt-adm").val( jQuery.trim($(this).children(".cpf").text()) );
+		$("#inp-username-alt-adm").val( jQuery.trim($(this).children(".username").text()) );
+		
+		
 		$(".tipos-adm").css('background','#eee');
 		$(".tipos-adm").css('color','#000');
 		$(this).css('background','linear-gradient(to bottom, rgba(255,200,0, .5), rgba(255,170,0, .7))');
@@ -573,6 +584,29 @@ function addDivExc(cont,tipo){
 }
 
 
+
+
+function addDivExcAdm(cont,tipo){
+    
+	if(tipo=='alert')
+	  var img = 'images/warning.png';
+	else if (tipo=='sucess')
+	   var img = 'images/success.png';
+	  
+	var conteudo = "<div class='mensage-box'><div class='box'><div class='msg'>	<img src='"+img+"'><span>"+cont+"</span></div><div class='bt-ok'><button id='bt-ok'>Ok</button></div></div></div>";
+	$('body').prepend(conteudo);
+	
+	$('#bt-ok').click(function(){ 
+			$('.mensage-box').remove();  
+			$('.inp').val('');   
+			$('#inp_exc_administrador').val(elementTarget);
+			$('#form_exc_administrador').submit();
+	});
+
+}
+
+
+
 //despesa
 function addDivExcDesp(cont,tipo){
     
@@ -633,6 +667,26 @@ function addDivAltDesp(cont,tipo){
 			$('.mensage-box').remove();  
 			$('#inp_alt_despesa').val(elementTarget);
 			$('#form_alt_desp').submit();
+	});
+
+}
+
+
+
+function addDivAltAdm(cont,tipo){
+    
+	if(tipo=='alert')
+	  var img = 'images/warning.png';
+	else if (tipo=='sucess')
+	   var img = 'images/success.png';
+	  
+	var conteudo = "<div class='mensage-box'><div class='box'><div class='msg'>	<img src='"+img+"'><span>"+cont+"</span></div><div class='bt-ok'><button id='bt-ok'>Ok</button></div></div></div>";
+	$('body').prepend(conteudo);
+	
+	$('#bt-ok').click(function(){ 
+			$('.mensage-box').remove();  
+			$('#inp_alt_administrador').val(elementTarget);
+			$('#form_alt_adm').submit();
 	});
 
 }

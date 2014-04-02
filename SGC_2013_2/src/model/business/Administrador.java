@@ -7,14 +7,27 @@ public class Administrador {
 	String usuario;
 	String cpf;
 	String senha;
-	int idAdmin;
+	int id;
+	
+	public Administrador(){	
+	};
+	
+	public Administrador(String nome, String cpf, String usuario, String senha){
+		this.nome = nome;
+		this.usuario = usuario;
+		this.cpf = cpf;
+		this.senha = senha;
+	};
 	
 	
-	public int getIdAdmin() {
-		return idAdmin;
+
+	
+	
+	public int getId() {
+		return id;
 	}
-	public void setIdAdmin(int idAdmin) {
-		this.idAdmin = idAdmin;
+	public void setId(int idAdmin) {
+		this.id = idAdmin;
 	}
 	public String getNome() {
 		return nome;

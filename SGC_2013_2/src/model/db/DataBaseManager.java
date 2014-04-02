@@ -11,9 +11,10 @@ import model.business.Servico;
 public class DataBaseManager {
 
 	private static DataBaseManager singleton;
-	AdministradoresDAO admDAO = new AdministradoresDAO();
+	AdministradorDAO admDAO = new AdministradorDAO();
 	ServicoDAO servicoDAO = new ServicoDAO();
 	DespesaDAO despesaDAO = new DespesaDAO();
+	AdministradorDAO administradorDAO = new AdministradorDAO();
 
 	private DataBaseManager() {
 	}
@@ -43,7 +44,7 @@ public class DataBaseManager {
 	} 
 	
 	// mŽtodos de Administrador
-	public int inserirAdministradorBD(Administrador adm) {
+	public int addAdministrador(Administrador adm) {
 		return admDAO.inserirAdministrador(adm);
 	}
 
@@ -56,6 +57,14 @@ public class DataBaseManager {
 
 	}
 
+	
+	public ArrayList<Administrador> getListAdministrador() {
+		// TODO Auto-generated method stub
+		return administradorDAO.getListAdministrador();
+		
+	}
+
+	/*
 	public Administrador verificarLogin(String usuario, String senha) {
 		return admDAO.verificarLogin(usuario, senha);
 
@@ -63,7 +72,7 @@ public class DataBaseManager {
 
 	public Vector<Administrador> listarAdministradoresbd() {
 		try {
-			AdministradoresDAO administradorDAO = new AdministradoresDAO();
+			AdministradorDAO administradorDAO = new AdministradorDAO();
 			Vector<Administrador> vetorAdministradores = administradorDAO
 					.listarTodosAdministradores();
 			return vetorAdministradores;
@@ -75,10 +84,11 @@ public class DataBaseManager {
 		}
 
 	}
+	*/
 	
     //método de despesa
 	public void addDespesa(String nome, String valor) {
-		despesaDAO.addDespesa(nome, Double.parseDouble(valor) ); 
+		despesaDAO.addDespesa(nome, Double.parseDouble(valor));
 		
 	}
 
@@ -93,5 +103,7 @@ public class DataBaseManager {
 	public void alterDespesa(String id, String nome, String valor) {
 		despesaDAO.alterDespesa(id, nome, valor);
 	}
+
+	
 
 }

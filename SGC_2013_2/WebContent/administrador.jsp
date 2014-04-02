@@ -32,14 +32,10 @@
 
 		<%@ page import="model.business.*, model.db.*, java.util.ArrayList;"%>
 
-		<div>
-			Usuario =
-			<%=SessionManager.getAtribulte()%>
-		</div>
-
-		<div>
-			<a href='logout.jsp'> Sair </a>
-		</div>
+		<form method="post" action='SGCServlet'>
+			<input type="hidden" name="cmd" value="LogoffCmd" />
+			<button>Sair</button>
+		</form>
 
 
 
@@ -58,7 +54,7 @@
 					
 					<li id='bt_administrador' > 
 						<form method="post" action='SGCServlet'>
-						<input type="hidden" name="cmd" value="GetAdmiministradorCmd" />
+						<input type="hidden" name="cmd" value="GetAdministradorCmd" />
 						<button class='bt_acesso'>Administradores</button>
 						</form> 
 					</li>

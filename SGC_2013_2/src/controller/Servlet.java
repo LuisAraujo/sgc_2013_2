@@ -21,7 +21,7 @@ import model.business.Servico;
 import model.business.SessionManager;
 import model.db.DAO;
 
-@WebServlet("/SGCServlet")
+//@WebServlet("/SGCServlet")
 public class Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Map mappings = null;
@@ -34,8 +34,12 @@ public class Servlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		mappings = new HashMap();
 		// mapping
-		//Serviço
+	
 		mappings.put("LoginCmd", "controller.LoginCmd");
+		mappings.put("LogoffCmd", "controller.LogoffCmd");
+		
+		
+		//Serviço	
 		mappings.put("AddServicoCmd", "controller.AddServicoCmd");
 		mappings.put("DeleteServicoCmd", "controller.DeleteServicoCmd");
 		mappings.put("AlterServicoCmd", "controller.AlterServicoCmd");
@@ -52,8 +56,11 @@ public class Servlet extends HttpServlet {
 		mappings.put("AddAdministradorCmd", "controller.AddAdministradorCmd");
 		mappings.put("DeleteAdministradorCmd", "controller.DeleteAdministradorCmd");
 		mappings.put("AlterAdministradorCmd", "controller.AlterAdministradorCmd");
-		//mappings.put("GetAdministradorCmd", "controller.GetAdministradorCmd");
+		mappings.put("GetAdministradorCmd", "controller.GetAdministradorCmd");
 		
+		
+		
+		mappings.put("getAjaxCmd", "controller.GetAjaxCmd");
 		//Laison?
 		
 	};

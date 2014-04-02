@@ -29,16 +29,10 @@
 
 		<%@ page import="model.business.*, model.db.*, java.util.ArrayList;"%>
 
-		<div>
-			Usuario =
-			<%=SessionManager.getAtribulte()%>
-		</div>
-
-		<div>
-			<a href='logout.jsp'> Sair </a>
-		</div>
-
-
+		<form method="post" action='SGCServlet'>
+			<input type="hidden" name="cmd" value="LogoffCmd" />
+			<button>Sair</button>
+		</form>
 
 
 		<div id="header-wrapper">
@@ -51,19 +45,21 @@
 				</div>
 			</div>
 			<div id="menu" class="container">
-			  <a style='text-align:left; line-height:0px'  href='administrador.jsp' >	<img  class='menu' src='images/menu.png'></img></a>
+				<a style='text-align: left; line-height: 0px'
+					href='administrador.jsp'> <img class='menu'
+					src='images/menu.png'></img></a>
 			</div>
 		</div>
 
-    
-       <!-- PAGINA -->
+
+		<!-- PAGINA -->
 
 		<div id="page" class="container">
 
 
 			<!-- DESPESA  -->
-			
-				<div id='content_desp' class="content">
+
+			<div id='content_desp' class="content">
 				<div class="secao">
 					<div class="title">
 						<h1 style='font-size: 30px'>Gerenciamento de Tipo de Despesa</h1>
@@ -85,11 +81,12 @@
 						<div class="aba-bg">
 
 							<div class='aba-conteiner'>
-								<form id="form_add" name="form_add" method="post" action='SGCServlet'>
+								<form id="form_add" name="form_add" method="post"
+									action='SGCServlet'>
 									<span class='aba-title'>Nome Tipo</span>
 									<input class='inp' name='nome' id="inp-nome-tipo" type='text' />
 									<span class='aba-title'>Valor Tipo</span>
-									<input class='inp' name='valor' id="inp-nome-tipo" type='text' />
+									<input class='inp' name='valor' id="inp-valor-tipo" type='text' />
 									<input type="hidden" name="cmd" value="AddDespesaCmd" />
 									<button id="bt_add_tipo">Adicionar</button>
 								</form>
@@ -104,11 +101,22 @@
 							<div class='aba-conteiner'>
 
 								<span class='aba-title'>Lista de Despesa</span>
-								<div class="lista-tipos lp-desp" style='width:500px'>
+
+								<div id='sobre-lista-desp-alt' class="lista-tipos"
+									style='width: 485px; height: 25px; overflow: hidden; margin-bottom: 0px;'>
+									<div class="atipos atipos-desp">
+										<div class="id">ID</div>
+										<div class="nome">NOME</div>
+										<div class="valor">VALOR</div>
+									</div>
+								</div>
+
+
+								<div class="lista-tipos lp-desp" style='width: 500px'>
 									<%
-										
-									ArrayList<Despesa> listaDespesa = (ArrayList<Despesa>)request.getAttribute("listaDespesa");
-									for (Despesa d : listaDespesa) {
+										ArrayList<Despesa> listaDespesa = (ArrayList<Despesa>) request
+												.getAttribute("listaDespesa");
+										for (Despesa d : listaDespesa) {
 									%>
 
 									<div class="tipos tipos-desp">
@@ -123,14 +131,20 @@
 
 								</div>
 
-							  <form id="form_alt_desp" name="form_alt_desp" method="post" action='SGCServlet'>
-									<span class='aba-title'>Novo Nome </span> 
-									<input class="inp"  id="inp-alt-desp-nome" type="text" name="nome" value="" >
-									<input class="inp"  id="inp-alt-desp-preco" type="text" name="preco" value="" >
-									<input id='inp_alt_despesa' type="hidden" name="iddespesa" value="0" />
+								<form id="form_alt_desp" name="form_alt_desp" method="post"
+									action='SGCServlet'>
+									<span class='aba-title'>Novo Nome </span>
+									<input class="inp" id="inp-alt-desp-nome" type="text"
+										name="nome" value="" />
+									<span class='aba-title'>Novo Valor </span>
+									<input class="inp" id="inp-alt-desp-preco" type="text"
+										name="preco" value="" />
+									<input id='inp_alt_despesa' type="hidden" name="iddespesa"
+										value="0" />
 									<input type="hidden" name="cmd" value="AlterDespesaCmd" />
-								
-</form>								
+									
+									
+								</form>
 								<button id="bt-alt-tipo-desp">Alterar</button>
 
 							</div>
@@ -143,13 +157,23 @@
 
 						<div class="aba-bg">
 							<div class='aba-conteiner'>
-							
-								<span class='aba-title'>Lista de Despesa</span>
-								<div class="lista-tipos">
 
-							   	<%
-										
-									for (Despesa d : listaDespesa) {
+								<span class='aba-title'>Lista de Despesa</span>
+
+								<div id='sobre-lista-desp-alt' class="lista-tipos"
+									style='width: 485px; height: 25px; overflow: hidden; margin-bottom: 0px;'>
+									<div class="atipos atipos-desp">
+										<div class="id">ID</div>
+										<div class="nome">NOME</div>
+										<div class="valor">VALOR</div>
+									</div>
+								</div>
+
+
+								<div class="lista-tipos lp-desp" style='width: 500px'>
+
+									<%
+										for (Despesa d : listaDespesa) {
 									%>
 
 									<div class="tipos tipos-desp">
@@ -165,23 +189,25 @@
 
 								</div>
 
- 						        <form id="form_despesa_exc" name="form_despesa_exc" method="post" action='SGCServlet'>
-									<input id='inp_exc_despesa' type="hidden" name="iddespesa" value="0" />
+								<form id="form_despesa_exc" name="form_despesa_exc"
+									method="post" action='SGCServlet'>
+									<input id='inp_exc_despesa' type="hidden" name="iddespesa"
+										value="0" />
 									<input type="hidden" name="cmd" value="DeleteDespesaCmd" />
 								</form>
-							
+
 								<button name="bt-exc-tipo" id="bt-exc-tipo-desp">Excluir</button>
- 						        
+
 							</div>
 						</div>
 					</div>
 
 				</div>
 			</div>
-			
-		
-			
-			
+
+
+
+
 		</div>
 
 

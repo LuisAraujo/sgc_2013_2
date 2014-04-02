@@ -16,6 +16,7 @@
 <link rel='stylesheet' type='text/css' href='style/style.css' />
 <link rel='stylesheet' type='text/css' href='style/normalize.css' />
 <script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/ajax.js'></script>
 <script type='text/javascript' src='js/script.js'></script>
 <!--[if IE 6]>
 	<link href="default_ie6.css" rel="stylesheet" type="text/css" />
@@ -29,15 +30,12 @@
 
 		<%@ page import="model.business.*, model.db.*, java.util.ArrayList;"%>
 
-		<div>
-			Usuario =
-			<%=SessionManager.getAtribulte()%>
-		</div>
+		<form method="post" action='SGCServlet'>
+			<input type="hidden" name="cmd" value="LogoffCmd" />
+			<button>Sair</button>
+		</form>
 
-		<div>
-			<a href='logout.jsp'> Sair </a>
-		</div>
-
+<div id='ajax'>Ajax</div>
 
 
 
@@ -105,7 +103,18 @@
 							<div class='aba-conteiner'>
 
 								<span class='aba-title'>Lista de Tipos</span>
-								<div class="lista-tipos">
+								
+								<div id='sobre-lista-desp-alt' class="lista-tipos"
+									style='width: 485px; height: 25px; overflow: hidden; margin-bottom: 0px;'>
+									<div class="atipos">
+										<div class="id">ID</div>
+										<div class="nome">NOME</div>
+									</div>
+								</div>
+								
+								
+								
+								<div id='lista-alt-servico' class="lista-tipos" style='width:500px'>
 
 									<%
 										
@@ -147,7 +156,18 @@
 							<div class='aba-conteiner'>
 
 								<span class='aba-title'>Lista de Tipos</span>
-								<div class="lista-tipos">
+							    
+							    <div id='sobre-lista-desp-alt' class="lista-tipos"
+									style='width: 485px; height: 25px; overflow: hidden; margin-bottom: 0px;'>
+									<div class="atipos">
+										<div class="id">ID</div>
+										<div class="nome">NOME</div>
+									</div>
+								</div>
+								
+								
+								
+								<div class="lista-tipos" style='width:500px'>
 
 									<%
 										
@@ -169,13 +189,10 @@
 
 								</div>
 								
-								<form id="form_exc_servico" name="form_exc" method="post" action='SGCServlet'>
-							
-									
+								<form id="form_exc_servico" name="form_exc" method="post" action='SGCServlet'>						
 									<input id='inp_exc_servico' type="hidden" name="idservico" value="0" />
 									<input type="hidden" name="cmd" value="DeleteServicoCmd" />
 								</form>
-								
 								<button id="bt-exc-tipo">Excluir</button>
 
 							</div>
